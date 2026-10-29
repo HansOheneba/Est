@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ivory: #f6f2ea;
+  --color-sand: #e9e1d2;
+  --color-ink: #13201b;
+  --color-forest: #1f3a30;
+  --color-moss: #3c5a4c;
+  --color-brass: #b8894a;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-brass);
+  color: white;
+}
+
+/* range inputs used by filters and the mortgage calculator */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--color-forest) var(--fill, 50%),
+    #d8cfbe var(--fill, 50%)
+  );
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: white;
+  border: 2px solid var(--color-forest);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  cursor: grab;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: white;
+  border: 2px solid var(--color-forest);
+  cursor: grab;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
