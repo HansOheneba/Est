@@ -55,7 +55,7 @@ export default function RoomTour() {
                 animate={{ scale: [1, 1.06] }}
                 transition={{ duration: 14, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
               >
-                <Image src={img(room.image, 2000)} alt={`${room.name} room`} fill sizes="(min-width: 1280px) 1216px, 100vw" className="object-cover" />
+                <Image src={img(room.image)} alt={`${room.name} room`} fill sizes="(min-width: 1280px) 1216px, 100vw" className="object-cover" />
               </motion.div>
               <div className="absolute inset-0 bg-black/15" />
             </motion.div>

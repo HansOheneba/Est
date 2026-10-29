@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* Testimonial + viewing */}
       <section className="relative overflow-hidden bg-wine text-bone">
-        <Image src={img("1600607687939-ce8a6c25118c", 2000)} alt="" fill sizes="100vw" className="object-cover opacity-20" />
+        <Image src={img("1600607687939-ce8a6c25118c")} alt="" fill sizes="100vw" className="object-cover opacity-20" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1.2fr_1fr] lg:py-32">
           <Reveal>
             <Quote className="h-10 w-10 text-amber" />

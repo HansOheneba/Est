@@ -30,7 +30,7 @@ export default function Hero() {
           className="absolute inset-0"
         >
           <Image
-            src={img("1600585154526-990dced4db0d", 1800)}
+            src={img("1600585154526-990dced4db0d")}
             alt="Modern home lit up at dusk"
             fill
             priority

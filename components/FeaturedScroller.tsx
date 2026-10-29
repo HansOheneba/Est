@@ -52,7 +52,7 @@ export default function FeaturedScroller() {
               className="group relative h-[58vh] w-[80vw] shrink-0 overflow-hidden rounded-[32px] sm:w-[46vw] lg:w-[36vw]"
             >
               <Image
-                src={img(l.cover, 1400)}
+                src={img(l.cover)}
                 alt={l.name}
                 fill
                 sizes="(min-width: 1024px) 36vw, 80vw"

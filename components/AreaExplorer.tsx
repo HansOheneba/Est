@@ -61,7 +61,7 @@ export default function AreaExplorer() {
               transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
               className="absolute inset-0"
             >
-              <Image src={img(area.image, 1600)} alt={area.name} fill sizes="(min-width: 1024px) 55vw, 100vw" className="grade object-cover" />
+              <Image src={img(area.image)} alt={area.name} fill sizes="(min-width: 1024px) 55vw, 100vw" className="grade object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </motion.div>
           </AnimatePresence>

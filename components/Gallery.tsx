@@ -46,7 +46,7 @@ export default function Gallery({ images, name }: { images: string[]; name: stri
             transition={{ delay: i * 0.08, duration: 0.6 }}
             className={`group relative overflow-hidden rounded-3xl ${i === 0 ? "col-span-4 row-span-2 sm:col-span-2" : "hidden sm:block"}`}
           >
-            <Image src={img(id, i === 0 ? 1600 : 800)} alt={`${name} photo ${i + 1}`} fill priority={i === 0} sizes={i === 0 ? "(min-width: 640px) 50vw, 100vw" : "25vw"} className="object-cover transition duration-700 group-hover:scale-105" />
+            <Image src={img(id)} alt={`${name} photo ${i + 1}`} fill priority={i === 0} sizes={i === 0 ? "(min-width: 640px) 50vw, 100vw" : "25vw"} className="object-cover transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-black/0 transition group-hover:bg-black/20" />
             {i === 0 ? (
               <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-night/70 px-4 py-2 text-xs font-medium text-bone backdrop-blur">
@@ -77,7 +77,7 @@ export default function Gallery({ images, name }: { images: string[]; name: stri
                   }}
                   className="relative h-full w-full cursor-grab active:cursor-grabbing"
                 >
-                  <Image src={img(images[open], 2400)} alt={`${name} photo ${open + 1}`} fill sizes="100vw" className="pointer-events-none object-contain" />
+                  <Image src={img(images[open])} alt={`${name} photo ${open + 1}`} fill sizes="100vw" className="pointer-events-none object-contain" />
                 </motion.div>
               </AnimatePresence>
             </div>

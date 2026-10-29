@@ -46,7 +46,7 @@ export default function ListingCard({
         >
           <div className={`relative overflow-hidden ${tall ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
             <Image
-              src={img(listing.cover, 1200)}
+              src={img(listing.cover)}
               alt={listing.name}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

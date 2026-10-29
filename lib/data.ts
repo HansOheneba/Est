@@ -1,5 +1,6 @@
-export const img = (id: string, w = 1600) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+// Photos (from Unsplash) live in /public/img so pages never wait on a third-party
+// image host; next/image still resizes them per device.
+export const img = (id: string) => `/img/${id}.jpg`;
 
 export type ListingType = "Villa" | "House" | "Apartment" | "Townhouse";
 export type Deal = "Buy" | "Rent";

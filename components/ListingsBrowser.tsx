@@ -168,7 +168,7 @@ export default function ListingsBrowser() {
             <div className="flex -space-x-3">
               {comparing.map((l) => (
                 <span key={l.slug} className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-bone">
-                  <Image src={img(l.cover, 120)} alt={l.name} fill sizes="40px" className="object-cover" />
+                  <Image src={img(l.cover)} alt={l.name} fill sizes="40px" className="object-cover" />
                 </span>
               ))}
             </div>
@@ -206,7 +206,7 @@ export default function ListingsBrowser() {
                 {comparing.map((l) => (
                   <Link key={l.slug} href={`/listings/${l.slug}`} className="group">
                     <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                      <Image src={img(l.cover, 600)} alt={l.name} fill sizes="250px" className="object-cover transition group-hover:scale-105" />
+                      <Image src={img(l.cover)} alt={l.name} fill sizes="250px" className="object-cover transition group-hover:scale-105" />
                     </div>
                     <p className="mt-2 font-serif text-lg leading-tight">{l.name}</p>
                   </Link>
