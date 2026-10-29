@@ -59,22 +59,22 @@ export default function ListingsBrowser() {
   };
 
   const chip = (on: boolean) =>
-    `rounded-full border px-4 py-2 text-sm transition ${on ? "border-forest bg-forest text-ivory" : "border-ink/15 hover:border-ink/40"}`;
+    `rounded-full border px-4 py-2 text-sm transition ${on ? "border-clay bg-clay text-bone" : "border-bone/15 hover:border-bone/40"}`;
 
   const comparing = listings.filter((l) => compare.includes(l.slug));
 
   return (
     <div className="mx-auto max-w-7xl px-5 pb-32 sm:px-8">
       {/* Filters */}
-      <div className="sticky top-[68px] z-30 -mx-5 mb-10 border-b border-ink/10 bg-ivory/90 px-5 py-4 backdrop-blur-xl sm:-mx-8 sm:px-8">
+      <div className="sticky top-[68px] z-30 -mx-5 mb-10 border-b border-bone/10 bg-night/90 px-5 py-4 backdrop-blur-xl sm:-mx-8 sm:px-8">
         <div className="flex flex-wrap items-center gap-2">
-          <SlidersHorizontal className="mr-1 h-4 w-4 text-ink/50" />
+          <SlidersHorizontal className="mr-1 h-4 w-4 text-bone/50" />
           {(["All", "Buy", "Rent"] as const).map((d) => (
             <button key={d} type="button" onClick={() => setDeal(d)} className={chip(deal === d)}>
               {d === "All" ? "Buy & rent" : d}
             </button>
           ))}
-          <span className="mx-1 hidden h-6 w-px bg-ink/10 sm:block" />
+          <span className="mx-1 hidden h-6 w-px bg-bone/10 sm:block" />
           {types.map((t) => (
             <button
               key={t}
@@ -85,12 +85,12 @@ export default function ListingsBrowser() {
               {t}
             </button>
           ))}
-          <span className="mx-1 hidden h-6 w-px bg-ink/10 sm:block" />
-          <select value={area} onChange={(e) => setArea(e.target.value)} className="rounded-full border border-ink/15 bg-transparent px-4 py-2 text-sm outline-none">
+          <span className="mx-1 hidden h-6 w-px bg-bone/10 sm:block" />
+          <select value={area} onChange={(e) => setArea(e.target.value)} className="rounded-full border border-bone/15 bg-transparent px-4 py-2 text-sm outline-none">
             <option value="">All areas</option>
             {allAreas.map((a) => <option key={a}>{a}</option>)}
           </select>
-          <select value={beds} onChange={(e) => setBeds(Number(e.target.value))} className="rounded-full border border-ink/15 bg-transparent px-4 py-2 text-sm outline-none">
+          <select value={beds} onChange={(e) => setBeds(Number(e.target.value))} className="rounded-full border border-bone/15 bg-transparent px-4 py-2 text-sm outline-none">
             <option value={0}>Any beds</option>
             {[1, 2, 3, 4, 5].map((n) => <option key={n} value={n}>{n}+ beds</option>)}
           </select>
@@ -105,7 +105,7 @@ export default function ListingsBrowser() {
         </div>
       </div>
 
-      <div className="mb-6 flex items-center justify-between text-sm text-ink/55">
+      <div className="mb-6 flex items-center justify-between text-sm text-bone/55">
         <motion.p key={results.length} initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }}>
           {results.length} {results.length === 1 ? "home" : "homes"} found
         </motion.p>
@@ -135,10 +135,10 @@ export default function ListingsBrowser() {
                     toggleCompare(l.slug);
                   }}
                   className={`absolute bottom-4 left-4 flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium backdrop-blur transition ${
-                    compare.includes(l.slug) ? "bg-forest text-white" : "bg-white/90 text-ink"
+                    compare.includes(l.slug) ? "bg-clay text-bone" : "bg-night/70 text-bone"
                   }`}
                 >
-                  <span className={`grid h-3.5 w-3.5 place-items-center rounded-[4px] border ${compare.includes(l.slug) ? "border-white bg-white text-forest" : "border-ink/40"}`}>
+                  <span className={`grid h-3.5 w-3.5 place-items-center rounded-[4px] border ${compare.includes(l.slug) ? "border-bone bg-bone text-clay" : "border-bone/40"}`}>
                     {compare.includes(l.slug) ? "✓" : ""}
                   </span>
                   Compare
@@ -152,7 +152,7 @@ export default function ListingsBrowser() {
       {results.length === 0 ? (
         <div className="py-24 text-center">
           <p className="font-serif text-3xl">Nothing matches, yet.</p>
-          <button type="button" onClick={reset} className="mt-4 rounded-full bg-forest px-6 py-3 text-sm text-ivory">Clear filters</button>
+          <button type="button" onClick={reset} className="mt-4 rounded-full bg-clay px-6 py-3 text-sm text-bone">Clear filters</button>
         </div>
       ) : null}
 
@@ -163,22 +163,22 @@ export default function ListingsBrowser() {
             initial={{ y: 120 }}
             animate={{ y: 0 }}
             exit={{ y: 120 }}
-            className="fixed inset-x-0 bottom-4 z-40 mx-auto flex w-[calc(100%-2rem)] max-w-2xl items-center gap-3 rounded-full bg-ink p-2 pl-4 text-ivory shadow-2xl"
+            className="fixed inset-x-0 bottom-4 z-40 mx-auto flex w-[calc(100%-2rem)] max-w-2xl items-center gap-3 rounded-full bg-bone p-2 pl-4 text-night shadow-2xl"
           >
             <div className="flex -space-x-3">
               {comparing.map((l) => (
-                <span key={l.slug} className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-ink">
+                <span key={l.slug} className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-bone">
                   <Image src={img(l.cover, 120)} alt={l.name} fill sizes="40px" className="object-cover" />
                 </span>
               ))}
             </div>
             <p className="flex-1 text-sm">{compare.length} of 3 selected</p>
-            <button type="button" onClick={() => setCompare([])} className="rounded-full px-3 py-2 text-sm text-ivory/60 hover:text-ivory">Clear</button>
+            <button type="button" onClick={() => setCompare([])} className="rounded-full px-3 py-2 text-sm text-night/60 hover:text-night">Clear</button>
             <button
               type="button"
               disabled={compare.length < 2}
               onClick={() => setShowCompare(true)}
-              className="inline-flex items-center gap-2 rounded-full bg-brass px-5 py-2.5 text-sm font-semibold disabled:opacity-40"
+              className="inline-flex items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold disabled:opacity-40"
             >
               <Scale className="h-4 w-4" /> Compare
             </button>
@@ -189,17 +189,17 @@ export default function ListingsBrowser() {
       {/* Compare modal */}
       <AnimatePresence>
         {showCompare ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 grid place-items-center bg-ink/60 p-4 backdrop-blur-sm" onClick={() => setShowCompare(false)}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 grid place-items-center bg-bone/60 p-4 backdrop-blur-sm" onClick={() => setShowCompare(false)}>
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 40, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-h-[90vh] w-full max-w-4xl overflow-auto rounded-[32px] bg-ivory p-6 sm:p-8"
+              className="max-h-[90vh] w-full max-w-4xl overflow-auto rounded-[32px] bg-night p-6 sm:p-8"
             >
               <div className="mb-6 flex items-center justify-between">
                 <h2 className="font-serif text-3xl">Side by side</h2>
-                <button type="button" aria-label="Close" onClick={() => setShowCompare(false)} className="rounded-full p-2 hover:bg-sand"><X className="h-5 w-5" /></button>
+                <button type="button" aria-label="Close" onClick={() => setShowCompare(false)} className="rounded-full p-2 hover:bg-surface"><X className="h-5 w-5" /></button>
               </div>
               <div className="grid gap-4" style={{ gridTemplateColumns: `120px repeat(${comparing.length}, minmax(0,1fr))` }}>
                 <div />
@@ -223,9 +223,9 @@ export default function ListingsBrowser() {
                   ] as const satisfies readonly (readonly [string, (l: (typeof listings)[number]) => React.ReactNode])[]
                 ).map(([label, fn]) => (
                   <div key={label} className="contents">
-                    <p className="border-t border-ink/10 pt-3 text-sm text-ink/50">{label}</p>
+                    <p className="border-t border-bone/10 pt-3 text-sm text-bone/50">{label}</p>
                     {comparing.map((l) => (
-                      <p key={l.slug} className="border-t border-ink/10 pt-3 text-sm font-medium">{fn(l)}</p>
+                      <p key={l.slug} className="border-t border-bone/10 pt-3 text-sm font-medium">{fn(l)}</p>
                     ))}
                   </div>
                 ))}

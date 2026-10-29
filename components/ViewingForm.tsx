@@ -35,15 +35,15 @@ export default function ViewingForm({ home }: { home: string }) {
   const ready = time && name.trim().length > 1 && phone.replace(/\D/g, "").length >= 9;
 
   return (
-    <div className="relative overflow-hidden rounded-[28px] bg-white p-6 shadow-[0_30px_80px_-40px_rgb(0_0_0/0.35)]">
+    <div className="relative overflow-hidden rounded-[28px] bg-surface p-6 ring-1 ring-bone/10 shadow-[0_30px_80px_-40px_rgb(0_0_0/0.8)]">
       <AnimatePresence mode="wait">
         {done ? (
           <motion.div key="done" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="py-10 text-center">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", delay: 0.1 }} className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-forest text-white">
+            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", delay: 0.1 }} className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-clay text-white">
               <Check className="h-8 w-8" />
             </motion.div>
             <p className="mt-5 font-serif text-2xl">Viewing requested</p>
-            <p className="mt-2 text-sm text-ink/60">
+            <p className="mt-2 text-sm text-bone/60">
               {home} on {days[day]?.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })} at {time}. We will call {name.split(" ")[0]} to confirm.
             </p>
             <button type="button" onClick={() => { setDone(false); setTime(null); }} className="mt-6 text-sm underline">Book another time</button>
@@ -57,17 +57,17 @@ export default function ViewingForm({ home }: { home: string }) {
               if (ready) setDone(true);
             }}
           >
-            <p className="flex items-center gap-2 font-serif text-2xl"><CalendarCheck className="h-5 w-5 text-brass" /> Book a viewing</p>
+            <p className="flex items-center gap-2 font-serif text-2xl"><CalendarCheck className="h-5 w-5 text-amber" /> Book a viewing</p>
             <div className="-mx-1 mt-5 flex gap-2 overflow-x-auto px-1 pb-2">
               {days.length === 0
-                ? Array.from({ length: 8 }, (_, i) => <span key={i} className="h-[62px] w-14 shrink-0 animate-pulse rounded-2xl bg-ink/5" />)
+                ? Array.from({ length: 8 }, (_, i) => <span key={i} className="h-[62px] w-14 shrink-0 animate-pulse rounded-2xl bg-bone/5" />)
                 : null}
               {days.map((d, i) => (
                 <button
                   key={d.toISOString()}
                   type="button"
                   onClick={() => { setDay(i); setTime(null); }}
-                  className={`flex w-14 shrink-0 flex-col items-center rounded-2xl border py-2.5 transition ${i === day ? "border-forest bg-forest text-white" : "border-ink/10 hover:border-ink/30"}`}
+                  className={`flex w-14 shrink-0 flex-col items-center rounded-2xl border py-2.5 transition ${i === day ? "border-clay bg-clay text-white" : "border-bone/10 hover:border-bone/30"}`}
                 >
                   <span className="text-[10px] uppercase">{d.toLocaleDateString("en-GB", { weekday: "short" })}</span>
                   <span className="font-serif text-xl">{d.getDate()}</span>
@@ -83,7 +83,7 @@ export default function ViewingForm({ home }: { home: string }) {
                     type="button"
                     disabled={off}
                     onClick={() => setTime(t)}
-                    className={`rounded-xl border py-2 text-sm transition ${off ? "cursor-not-allowed border-transparent bg-ink/5 text-ink/25 line-through" : time === t ? "border-brass bg-brass text-white" : "border-ink/10 hover:border-ink/30"}`}
+                    className={`rounded-xl border py-2 text-sm transition ${off ? "cursor-not-allowed border-transparent bg-bone/5 text-bone/25 line-through" : time === t ? "border-amber bg-amber text-night" : "border-bone/10 hover:border-bone/30"}`}
                   >
                     {t}
                   </button>
@@ -91,10 +91,10 @@ export default function ViewingForm({ home }: { home: string }) {
               })}
             </div>
             <div className="mt-4 space-y-2">
-              <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" className="w-full rounded-xl border border-ink/10 bg-ivory px-4 py-3 text-sm outline-none focus:border-forest" />
-              <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone (e.g. 024 123 4567)" inputMode="tel" className="w-full rounded-xl border border-ink/10 bg-ivory px-4 py-3 text-sm outline-none focus:border-forest" />
+              <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" className="w-full rounded-xl border border-bone/10 bg-night px-4 py-3 text-sm outline-none focus:border-clay" />
+              <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone (e.g. 024 123 4567)" inputMode="tel" className="w-full rounded-xl border border-bone/10 bg-night px-4 py-3 text-sm outline-none focus:border-clay" />
             </div>
-            <button type="submit" disabled={!ready} className="mt-4 w-full rounded-xl bg-forest py-3.5 text-sm font-semibold text-white transition enabled:hover:bg-moss disabled:opacity-40">
+            <button type="submit" disabled={!ready} className="mt-4 w-full rounded-xl bg-clay py-3.5 text-sm font-semibold text-white transition enabled:hover:bg-clay-deep disabled:opacity-40">
               {time ? `Request ${time} viewing` : "Pick a time"}
             </button>
           </motion.form>

@@ -15,11 +15,11 @@ export default function AreaExplorer() {
   return (
     <section id="areas" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 sm:px-8 lg:py-32">
       <div className="mb-12 max-w-2xl">
-        <p className="text-xs uppercase tracking-[0.3em] text-brass">Neighbourhoods</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-amber">Neighbourhoods</p>
         <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
           Every part of Accra has its own rhythm.
         </h2>
-        <p className="mt-4 text-ink/60">Hover a neighbourhood to see what life there looks like.</p>
+        <p className="mt-4 text-bone/60">Hover a neighbourhood to see what life there looks like.</p>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1fr_1.3fr] lg:gap-14">
@@ -31,13 +31,13 @@ export default function AreaExplorer() {
                 onMouseEnter={() => setActive(i)}
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
-                className="group flex w-full items-center justify-between border-b border-ink/10 py-5 text-left"
+                className="group flex w-full items-center justify-between border-b border-bone/10 py-5 text-left"
               >
                 <span className="flex items-baseline gap-4">
-                  <span className="text-xs tabular-nums text-ink/35">0{i + 1}</span>
+                  <span className="text-xs tabular-nums text-bone/35">0{i + 1}</span>
                   <span
                     className={`font-serif text-3xl transition-all duration-500 sm:text-4xl ${
-                      i === active ? "translate-x-2 text-forest italic" : "text-ink/35 group-hover:text-ink/70"
+                      i === active ? "translate-x-2 text-clay italic" : "text-bone/35 group-hover:text-bone/70"
                     }`}
                   >
                     {a.name}
@@ -51,7 +51,7 @@ export default function AreaExplorer() {
           ))}
         </ul>
 
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] bg-sand sm:aspect-[4/3] lg:aspect-auto lg:min-h-[560px]">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] bg-surface sm:aspect-[4/3] lg:aspect-auto lg:min-h-[560px]">
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.div
               key={area.name}
@@ -61,7 +61,7 @@ export default function AreaExplorer() {
               transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
               className="absolute inset-0"
             >
-              <Image src={img(area.image, 1600)} alt={area.name} fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
+              <Image src={img(area.image, 1600)} alt={area.name} fill sizes="(min-width: 1024px) 55vw, 100vw" className="grade object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </motion.div>
           </AnimatePresence>

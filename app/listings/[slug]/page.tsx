@@ -30,18 +30,18 @@ export default async function ListingPage(props: PageProps<"/listings/[slug]">) 
   return (
     <main className="pt-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Link href="/listings" className="mb-6 inline-flex items-center gap-2 text-sm text-ink/60 hover:text-ink">
+        <Link href="/listings" className="mb-6 inline-flex items-center gap-2 text-sm text-bone/60 hover:text-bone">
           <ArrowLeft className="h-4 w-4" /> All listings
         </Link>
 
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="flex items-center gap-2 text-sm text-ink/55"><MapPin className="h-4 w-4" /> {listing.address}</p>
+            <p className="flex items-center gap-2 text-sm text-bone/55"><MapPin className="h-4 w-4" /> {listing.address}</p>
             <h1 className="mt-2 font-serif text-5xl leading-none sm:text-7xl">{listing.name}</h1>
           </div>
           <div className="flex items-center gap-4">
-            <p className="font-serif text-4xl text-forest">{formatPrice(listing)}</p>
-            <SaveButton slug={listing.slug} className="border border-ink/10" />
+            <p className="font-serif text-4xl text-clay">{formatPrice(listing)}</p>
+            <SaveButton slug={listing.slug} className="border border-bone/10" />
           </div>
         </div>
 
@@ -56,25 +56,25 @@ export default async function ListingPage(props: PageProps<"/listings/[slug]">) 
                 { icon: Maximize, label: "Interior", value: `${listing.sqm} m²` },
                 { icon: CalendarDays, label: "Built", value: listing.year },
               ].map((s) => (
-                <div key={s.label} className="rounded-3xl bg-white p-5">
-                  <s.icon className="h-5 w-5 text-brass" />
+                <div key={s.label} className="rounded-3xl bg-surface p-5 ring-1 ring-bone/5">
+                  <s.icon className="h-5 w-5 text-amber" />
                   <p className="mt-3 font-serif text-2xl">{s.value}</p>
-                  <p className="text-xs text-ink/50">{s.label}</p>
+                  <p className="text-xs text-bone/50">{s.label}</p>
                 </div>
               ))}
             </div>
 
             <Reveal>
               <h2 className="mt-14 font-serif text-3xl">About this home</h2>
-              <p className="mt-4 text-lg leading-relaxed text-ink/70">{listing.blurb}</p>
+              <p className="mt-4 text-lg leading-relaxed text-bone/70">{listing.blurb}</p>
             </Reveal>
 
             <Reveal>
               <h2 className="mt-14 font-serif text-3xl">What&apos;s included</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {listing.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 rounded-2xl border border-ink/10 px-4 py-3">
-                    <span className="grid h-6 w-6 place-items-center rounded-full bg-forest text-white"><Check className="h-3.5 w-3.5" /></span>
+                  <li key={f} className="flex items-center gap-3 rounded-2xl border border-bone/10 px-4 py-3">
+                    <span className="grid h-6 w-6 place-items-center rounded-full bg-clay text-white"><Check className="h-3.5 w-3.5" /></span>
                     {f}
                   </li>
                 ))}

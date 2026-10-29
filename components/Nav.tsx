@@ -31,12 +31,12 @@ export default function Nav() {
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         overHero
           ? "bg-transparent py-6 text-white"
-          : "bg-ivory/85 py-3 text-ink shadow-[0_1px_0_rgb(0_0_0/0.06)] backdrop-blur-xl"
+          : "bg-night/85 py-3 text-bone shadow-[0_1px_0_rgb(0_0_0/0.06)] backdrop-blur-xl"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
         <Link href="/" className="font-serif text-2xl tracking-tight">
-          Haven <span className="text-brass">&amp;</span> Co.
+          Haven <span className="text-amber">&amp;</span> Co.
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm md:flex">
@@ -53,8 +53,8 @@ export default function Nav() {
             href="/listings"
             className={`hidden rounded-full px-5 py-2.5 text-sm font-medium transition sm:inline-flex ${
               overHero
-                ? "bg-white text-ink hover:bg-ivory"
-                : "bg-forest text-ivory hover:bg-moss"
+                ? "bg-bone text-night hover:bg-amber"
+                : "bg-clay text-bone hover:bg-clay-deep"
             }`}
           >
             Find a home
@@ -76,14 +76,14 @@ export default function Nav() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mx-4 mt-3 rounded-3xl bg-ivory p-4 text-ink shadow-xl md:hidden"
+            className="mx-4 mt-3 rounded-3xl bg-night p-4 text-bone shadow-xl md:hidden"
           >
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-2xl px-4 py-3 font-serif text-xl hover:bg-sand"
+                className="block rounded-2xl px-4 py-3 font-serif text-xl hover:bg-surface"
               >
                 {l.label}
               </Link>

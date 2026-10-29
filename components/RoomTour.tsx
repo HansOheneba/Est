@@ -12,15 +12,15 @@ export default function RoomTour() {
   const room = rooms[roomIdx];
 
   return (
-    <section id="tour" className="scroll-mt-24 bg-ink py-24 text-ivory lg:py-32">
+    <section id="tour" className="scroll-mt-24 bg-night py-24 text-bone lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-brass">Step inside • The Glasshouse</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-amber">Step inside • The Glasshouse</p>
             <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">Take the tour before the viewing.</h2>
-            <p className="mt-4 text-ivory/60">Switch rooms and tap the markers to see the details that matter.</p>
+            <p className="mt-4 text-bone/60">Switch rooms and tap the markers to see the details that matter.</p>
           </div>
-          <div className="flex flex-wrap gap-2 rounded-full bg-ivory/5 p-1.5">
+          <div className="flex flex-wrap gap-2 rounded-full bg-bone/5 p-1.5">
             {rooms.map((r, i) => (
               <button
                 key={r.name}
@@ -32,9 +32,9 @@ export default function RoomTour() {
                 className="relative rounded-full px-5 py-2 text-sm"
               >
                 {i === roomIdx ? (
-                  <motion.span layoutId="room-pill" className="absolute inset-0 rounded-full bg-ivory" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
+                  <motion.span layoutId="room-pill" className="absolute inset-0 rounded-full bg-bone" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
                 ) : null}
-                <span className={`relative ${i === roomIdx ? "text-ink" : "text-ivory/70"}`}>{r.name}</span>
+                <span className={`relative ${i === roomIdx ? "text-night" : "text-bone/70"}`}>{r.name}</span>
               </button>
             ))}
           </div>
@@ -76,7 +76,7 @@ export default function RoomTour() {
                 className="relative -translate-x-1/2 -translate-y-1/2"
               >
                 <span className="absolute inset-0 animate-ping rounded-full bg-white/60" />
-                <span className={`relative grid h-9 w-9 place-items-center rounded-full bg-white text-ink shadow-lg transition ${spot === i ? "rotate-45 bg-brass text-white" : ""}`}>
+                <span className={`relative grid h-9 w-9 place-items-center rounded-full bg-white text-night shadow-lg transition ${spot === i ? "rotate-45 bg-amber text-white" : ""}`}>
                   <Plus className="h-4 w-4" />
                 </span>
               </motion.button>
@@ -87,10 +87,10 @@ export default function RoomTour() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }}
                     onClick={(e) => e.stopPropagation()}
-                    className={`absolute top-6 w-60 rounded-2xl bg-white p-4 text-ink shadow-2xl ${h.x > 60 ? "right-0" : "left-0"}`}
+                    className={`absolute top-6 w-60 rounded-2xl bg-bone p-4 text-night shadow-2xl ${h.x > 60 ? "right-0" : "left-0"}`}
                   >
                     <p className="font-serif text-lg">{h.title}</p>
-                    <p className="mt-1 text-sm text-ink/65">{h.body}</p>
+                    <p className="mt-1 text-sm text-night/65">{h.body}</p>
                   </motion.div>
                 ) : null}
               </AnimatePresence>

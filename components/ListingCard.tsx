@@ -42,7 +42,7 @@ export default function ListingCard({
             mx.set(0.5);
             my.set(0.5);
           }}
-          className="group block overflow-hidden rounded-[28px] bg-white shadow-[0_20px_60px_-30px_rgb(0_0_0/0.35)]"
+          className="group block overflow-hidden rounded-[28px] bg-surface ring-1 ring-bone/5 shadow-[0_30px_80px_-40px_rgb(0_0_0/0.8)]"
         >
           <div className={`relative overflow-hidden ${tall ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
             <Image
@@ -50,17 +50,17 @@ export default function ListingCard({
               alt={listing.name}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-cover transition duration-[1.2s] ease-out group-hover:scale-110"
+              className="object-cover transition duration-[1.2s] ease-out group-hover:scale-110 grade"
             />
             <motion.div
               style={{ left: shineX }}
               className="pointer-events-none absolute -top-1/2 h-[200%] w-24 -translate-x-1/2 rotate-12 bg-white/20 opacity-0 blur-2xl transition group-hover:opacity-100"
             />
             <div className="absolute left-4 top-4 flex gap-2">
-              <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-medium backdrop-blur">
+              <span className="rounded-full bg-night/70 px-3 py-1 text-xs font-medium text-bone backdrop-blur">
                 {listing.deal === "Rent" ? "For rent" : "For sale"}
               </span>
-              <span className="rounded-full bg-ink/70 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+              <span className="rounded-full bg-clay/85 px-3 py-1 text-xs font-medium text-bone backdrop-blur">
                 {listing.type}
               </span>
             </div>
@@ -71,11 +71,11 @@ export default function ListingCard({
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="font-serif text-xl leading-tight">{listing.name}</h3>
-                <p className="mt-1 text-sm text-ink/55">{listing.area}</p>
+                <p className="mt-1 text-sm text-bone/55">{listing.area}</p>
               </div>
-              <p className="whitespace-nowrap font-serif text-lg text-forest">{formatPrice(listing)}</p>
+              <p className="whitespace-nowrap font-serif text-lg text-amber">{formatPrice(listing)}</p>
             </div>
-            <div className="mt-4 flex gap-4 border-t border-ink/10 pt-4 text-xs text-ink/65">
+            <div className="mt-4 flex gap-4 border-t border-bone/10 pt-4 text-xs text-bone/65">
               <span className="flex items-center gap-1.5"><BedDouble className="h-3.5 w-3.5" />{listing.beds} beds</span>
               <span className="flex items-center gap-1.5"><Bath className="h-3.5 w-3.5" />{listing.baths} baths</span>
               <span className="flex items-center gap-1.5"><Maximize className="h-3.5 w-3.5" />{listing.sqm} m²</span>

@@ -24,7 +24,7 @@ function Slider({
   return (
     <label className="block">
       <div className="mb-3 flex items-baseline justify-between">
-        <span className="text-sm text-ink/60">{label}</span>
+        <span className="text-sm text-bone/60">{label}</span>
         <span className="font-serif text-xl">{display}</span>
       </div>
       <input
@@ -59,17 +59,17 @@ export default function MortgageCalculator({ initialPrice = 850000 }: { initialP
   const total = deposit + principal + interest;
   const C = 2 * Math.PI * 70;
   const segs = [
-    { label: "Deposit", value: deposit, color: "var(--color-brass)" },
-    { label: "Loan", value: principal, color: "var(--color-forest)" },
-    { label: "Interest", value: interest, color: "#c9bfae" },
+    { label: "Deposit", value: deposit, color: "var(--color-amber)" },
+    { label: "Loan", value: principal, color: "var(--color-clay)" },
+    { label: "Interest", value: interest, color: "#5b4f45" },
   ];
   let offset = 0;
 
   return (
     <section id="calculator" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 sm:px-8 lg:py-32">
-      <div className="grid items-center gap-12 rounded-[40px] bg-white p-6 shadow-[0_30px_80px_-40px_rgb(0_0_0/0.3)] sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:p-14">
+      <div className="grid items-center gap-12 rounded-[40px] bg-surface p-6 ring-1 ring-bone/5 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:p-14">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-brass">Plan it</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-amber">Plan it</p>
           <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">What would it cost each month?</h2>
           <div className="mt-10 space-y-8">
             <Slider label="Home price" value={price} min={150000} max={2500000} step={10000} onChange={setPrice} display={`$${price.toLocaleString()}`} />
@@ -82,7 +82,7 @@ export default function MortgageCalculator({ initialPrice = 850000 }: { initialP
         <div className="flex flex-col items-center">
           <div className="relative">
             <svg viewBox="0 0 180 180" className="h-72 w-72 -rotate-90">
-              <circle cx="90" cy="90" r="70" fill="none" stroke="#efe9de" strokeWidth="22" />
+              <circle cx="90" cy="90" r="70" fill="none" stroke="#2b2520" strokeWidth="22" />
               {segs.map((s) => {
                 const len = (s.value / total) * C;
                 const el = (
@@ -103,8 +103,8 @@ export default function MortgageCalculator({ initialPrice = 850000 }: { initialP
               })}
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <span className="text-xs uppercase tracking-wider text-ink/50">Monthly</span>
-              <motion.span key={Math.round(monthly)} initial={{ y: 6, opacity: 0.4 }} animate={{ y: 0, opacity: 1 }} className="font-serif text-4xl text-forest">
+              <span className="text-xs uppercase tracking-wider text-bone/50">Monthly</span>
+              <motion.span key={Math.round(monthly)} initial={{ y: 6, opacity: 0.4 }} animate={{ y: 0, opacity: 1 }} className="font-serif text-4xl text-clay">
                 ${Math.round(monthly).toLocaleString()}
               </motion.span>
             </div>
@@ -117,7 +117,7 @@ export default function MortgageCalculator({ initialPrice = 850000 }: { initialP
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-center text-xs text-ink/45">Illustrative only. Speak to us for lender introductions.</p>
+          <p className="mt-6 text-center text-xs text-bone/45">Illustrative only. Speak to us for lender introductions.</p>
         </div>
       </div>
     </section>

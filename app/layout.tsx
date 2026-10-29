@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// High-contrast Bodoni for the cinematic headlines, a crisp grotesk for everything else
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
 });
 
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} antialiased`}>
+    <html lang="en" className={`${bodoni.variable} ${hanken.variable} antialiased`}>
       <body className="min-h-dvh font-sans">
         <Nav />
         {children}

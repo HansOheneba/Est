@@ -49,7 +49,7 @@ export default function Gallery({ images, name }: { images: string[]; name: stri
             <Image src={img(id, i === 0 ? 1600 : 800)} alt={`${name} photo ${i + 1}`} fill priority={i === 0} sizes={i === 0 ? "(min-width: 640px) 50vw, 100vw" : "25vw"} className="object-cover transition duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-black/0 transition group-hover:bg-black/20" />
             {i === 0 ? (
-              <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-ink backdrop-blur">
+              <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-night/70 px-4 py-2 text-xs font-medium text-bone backdrop-blur">
                 <Expand className="h-3.5 w-3.5" /> View all {images.length} photos
               </span>
             ) : null}
