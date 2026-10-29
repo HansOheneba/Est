@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import { DM_Serif_Display, Manrope } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-// Instrument Serif carries the editorial storytelling; Manrope handles every
+// DM Serif Display carries the editorial storytelling; Manrope handles every
 // functional surface (navigation, prices, search, forms).
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const dmSerif = DM_Serif_Display({
+  variable: "--font-dm-serif",
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${instrument.variable} ${manrope.variable} antialiased`}>
+    <html lang="en" className={`${dmSerif.variable} ${manrope.variable} antialiased`}>
       <body className="min-h-dvh font-sans">
         <Nav />
         {children}

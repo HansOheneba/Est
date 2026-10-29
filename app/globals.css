@@ -10,7 +10,7 @@
   --color-wine: #3b1612;
   --color-amber: #d8a65e;
   --font-sans: var(--font-manrope);
-  --font-serif: var(--font-instrument);
+  --font-serif: var(--font-dm-serif);
 }
 
 html {
@@ -88,7 +88,7 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
-/* Instrument Serif only ships at 400: never let the browser fake a bold */
+/* DM Serif Display only ships at 400: never let the browser fake a bold */
 .font-serif {
   font-synthesis: none;
 }
