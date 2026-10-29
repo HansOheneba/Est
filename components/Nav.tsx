@@ -39,7 +39,7 @@ export default function Nav() {
           Haven <span className="text-amber">&amp;</span> Co.
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm md:flex">
+        <nav className="hidden items-center gap-8 text-[13.5px] font-medium md:flex">
           {links.map((l) => (
             <Link key={l.href} href={l.href} className="group relative py-1">
               {l.label}

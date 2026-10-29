@@ -16,8 +16,8 @@ export default function RoomTour() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber">Step inside • The Glasshouse</p>
-            <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">Take the tour before the viewing.</h2>
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber">Step inside • The Glasshouse</p>
+            <h2 className="mt-3 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">Take the tour before the viewing.</h2>
             <p className="mt-4 text-bone/60">Switch rooms and tap the markers to see the details that matter.</p>
           </div>
           <div className="flex flex-wrap gap-2 rounded-full bg-bone/5 p-1.5">
@@ -89,7 +89,7 @@ export default function RoomTour() {
                     onClick={(e) => e.stopPropagation()}
                     className={`absolute top-6 w-60 rounded-2xl bg-bone p-4 text-night shadow-2xl ${h.x > 60 ? "right-0" : "left-0"}`}
                   >
-                    <p className="font-serif text-lg">{h.title}</p>
+                    <p className="font-semibold">{h.title}</p>
                     <p className="mt-1 text-sm text-night/65">{h.body}</p>
                   </motion.div>
                 ) : null}

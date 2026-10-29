@@ -67,12 +67,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="mb-5 text-xs uppercase tracking-[0.4em] text-amber"
+          className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-amber"
         >
           Accra • Est. 2014 • 600+ homes placed
         </motion.p>
 
-        <h1 className="max-w-4xl font-serif text-[13vw] leading-[0.95] tracking-[-0.01em] sm:text-7xl lg:text-8xl">
+        <h1 className="max-w-3xl font-serif text-[15vw] leading-[0.92] sm:text-7xl lg:text-[88px]">
           {words.map((w, i) => (
             <span key={i} className="inline-block overflow-hidden pb-2 align-bottom">
               <motion.span

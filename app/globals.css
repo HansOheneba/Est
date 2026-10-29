@@ -9,8 +9,8 @@
   --color-clay-deep: #8e3b28;
   --color-wine: #3b1612;
   --color-amber: #d8a65e;
-  --font-sans: var(--font-hanken);
-  --font-serif: var(--font-bodoni);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-instrument);
 }
 
 html {
@@ -88,10 +88,9 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
-/* Bodoni reads best a touch heavier and tighter at display sizes */
+/* Instrument Serif only ships at 400: never let the browser fake a bold */
 .font-serif {
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-synthesis: none;
 }
 
 /* warm film grade on property photography; full colour on hover */

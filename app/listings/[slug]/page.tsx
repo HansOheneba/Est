@@ -40,7 +40,7 @@ export default async function ListingPage(props: PageProps<"/listings/[slug]">) 
             <h1 className="mt-2 font-serif text-5xl leading-none sm:text-7xl">{listing.name}</h1>
           </div>
           <div className="flex items-center gap-4">
-            <p className="font-serif text-4xl text-clay">{formatPrice(listing)}</p>
+            <p className="text-3xl font-semibold text-amber">{formatPrice(listing)}</p>
             <SaveButton slug={listing.slug} className="border border-bone/10" />
           </div>
         </div>
@@ -58,7 +58,7 @@ export default async function ListingPage(props: PageProps<"/listings/[slug]">) 
               ].map((s) => (
                 <div key={s.label} className="rounded-3xl bg-surface p-5 ring-1 ring-bone/5">
                   <s.icon className="h-5 w-5 text-amber" />
-                  <p className="mt-3 font-serif text-2xl">{s.value}</p>
+                  <p className="mt-3 text-2xl font-semibold">{s.value}</p>
                   <p className="text-xs text-bone/50">{s.label}</p>
                 </div>
               ))}

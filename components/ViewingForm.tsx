@@ -70,7 +70,7 @@ export default function ViewingForm({ home }: { home: string }) {
                   className={`flex w-14 shrink-0 flex-col items-center rounded-2xl border py-2.5 transition ${i === day ? "border-clay bg-clay text-white" : "border-bone/10 hover:border-bone/30"}`}
                 >
                   <span className="text-[10px] uppercase">{d.toLocaleDateString("en-GB", { weekday: "short" })}</span>
-                  <span className="font-serif text-xl">{d.getDate()}</span>
+                  <span className="text-xl font-semibold">{d.getDate()}</span>
                 </button>
               ))}
             </div>

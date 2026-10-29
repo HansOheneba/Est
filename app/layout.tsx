@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
+import { Instrument_Serif, Manrope } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-// High-contrast Bodoni for the cinematic headlines, a crisp grotesk for everything else
-const bodoni = Bodoni_Moda({
-  variable: "--font-bodoni",
+// Instrument Serif carries the editorial storytelling; Manrope handles every
+// functional surface (navigation, prices, search, forms).
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
+  weight: "400",
   style: ["normal", "italic"],
-  axes: ["opsz"],
 });
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bodoni.variable} ${hanken.variable} antialiased`}>
+    <html lang="en" className={`${instrument.variable} ${manrope.variable} antialiased`}>
       <body className="min-h-dvh font-sans">
         <Nav />
         {children}

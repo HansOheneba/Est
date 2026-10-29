@@ -32,8 +32,8 @@ export default function FeaturedScroller() {
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden">
         <div className="mx-auto mb-10 flex w-full max-w-7xl items-end justify-between gap-6 px-5 sm:px-8">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-amber">Featured residences</p>
-            <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-6xl">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber">Featured residences</p>
+            <h2 className="mt-3 font-serif text-4xl leading-[1.05] sm:text-6xl">
               Keep scrolling,
               <br />
               <span className="italic text-bone/70">the homes keep coming.</span>
@@ -63,7 +63,7 @@ export default function FeaturedScroller() {
               <div className="absolute inset-x-6 bottom-6 flex items-end justify-between gap-4">
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-white/70">{l.area}</p>
-                  <h3 className="mt-1 font-serif text-3xl text-white">{l.name}</h3>
+                  <h3 className="mt-1 text-2xl font-semibold text-white">{l.name}</h3>
                   <p className="mt-1 text-sm text-white/80">
                     {l.beds} beds • {l.sqm} m² • {formatPrice(l)}
                   </p>

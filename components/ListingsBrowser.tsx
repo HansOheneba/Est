@@ -208,7 +208,7 @@ export default function ListingsBrowser() {
                     <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                       <Image src={img(l.cover)} alt={l.name} fill sizes="250px" className="object-cover transition group-hover:scale-105" />
                     </div>
-                    <p className="mt-2 font-serif text-lg leading-tight">{l.name}</p>
+                    <p className="mt-2 font-semibold leading-tight">{l.name}</p>
                   </Link>
                 ))}
                 {(

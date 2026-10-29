@@ -11,7 +11,7 @@ export default function ListingsPage() {
   return (
     <main className="pt-28">
       <div className="mx-auto max-w-7xl px-5 pb-8 sm:px-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-amber">Listings</p>
+        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber">Listings</p>
         <h1 className="mt-3 font-serif text-5xl leading-tight sm:text-7xl">
           Homes across <span className="italic text-clay">Accra</span>
         </h1>

@@ -70,14 +70,14 @@ export default function ListingCard({
           <div className="p-5">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <h3 className="font-serif text-xl leading-tight">{listing.name}</h3>
+                <h3 className="text-xl font-semibold leading-tight">{listing.name}</h3>
                 <p className="mt-1 text-sm text-bone/55">{listing.area}</p>
               </div>
-              <p className="whitespace-nowrap font-serif text-lg text-amber">{formatPrice(listing)}</p>
+              <p className="whitespace-nowrap text-xl font-semibold text-amber">{formatPrice(listing)}</p>
             </div>
             <div className="mt-4 flex gap-4 border-t border-bone/10 pt-4 text-xs text-bone/65">
-              <span className="flex items-center gap-1.5"><BedDouble className="h-3.5 w-3.5" />{listing.beds} beds</span>
-              <span className="flex items-center gap-1.5"><Bath className="h-3.5 w-3.5" />{listing.baths} baths</span>
+              <span className="flex items-center gap-1.5"><BedDouble className="h-3.5 w-3.5" />{listing.beds} {listing.beds === 1 ? "bed" : "beds"}</span>
+              <span className="flex items-center gap-1.5"><Bath className="h-3.5 w-3.5" />{listing.baths} {listing.baths === 1 ? "bath" : "baths"}</span>
               <span className="flex items-center gap-1.5"><Maximize className="h-3.5 w-3.5" />{listing.sqm} m²</span>
             </div>
           </div>

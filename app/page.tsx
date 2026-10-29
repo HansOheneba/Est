@@ -35,8 +35,8 @@ export default function Home() {
       {/* Intro + stats */}
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-2 lg:py-32">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-amber">Who we are</p>
-          <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber">Who we are</p>
+          <h2 className="mt-3 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
             We don&apos;t sell square metres. We find the place your life fits into.
           </h2>
         </Reveal>
@@ -62,8 +62,8 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
         <div className="mb-10 flex items-end justify-between gap-6">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] text-amber">Ready to move in</p>
-            <h2 className="mt-3 font-serif text-4xl sm:text-5xl">Rentals this month</h2>
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber">Ready to move in</p>
+            <h2 className="mt-3 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">Rentals this month</h2>
           </Reveal>
           <Link href="/listings?deal=Rent" className="hidden items-center gap-2 text-sm font-medium sm:inline-flex">
             All rentals <ArrowUpRight className="h-4 w-4" />

@@ -25,7 +25,7 @@ function Slider({
     <label className="block">
       <div className="mb-3 flex items-baseline justify-between">
         <span className="text-sm text-bone/60">{label}</span>
-        <span className="font-serif text-xl">{display}</span>
+        <span className="text-lg font-semibold tabular-nums">{display}</span>
       </div>
       <input
         type="range"
@@ -69,8 +69,8 @@ export default function MortgageCalculator({ initialPrice = 850000 }: { initialP
     <section id="calculator" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 sm:px-8 lg:py-32">
       <div className="grid items-center gap-12 rounded-[40px] bg-surface p-6 ring-1 ring-bone/5 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:p-14">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-amber">Plan it</p>
-          <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">What would it cost each month?</h2>
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber">Plan it</p>
+          <h2 className="mt-3 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">What would it cost each month?</h2>
           <div className="mt-10 space-y-8">
             <Slider label="Home price" value={price} min={150000} max={2500000} step={10000} onChange={setPrice} display={`$${price.toLocaleString()}`} />
             <Slider label="Deposit" value={depositPct} min={10} max={70} step={5} onChange={setDepositPct} display={`${depositPct}%`} />
@@ -104,7 +104,7 @@ export default function MortgageCalculator({ initialPrice = 850000 }: { initialP
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
               <span className="text-xs uppercase tracking-wider text-bone/50">Monthly</span>
-              <motion.span key={Math.round(monthly)} initial={{ y: 6, opacity: 0.4 }} animate={{ y: 0, opacity: 1 }} className="font-serif text-4xl text-clay">
+              <motion.span key={Math.round(monthly)} initial={{ y: 6, opacity: 0.4 }} animate={{ y: 0, opacity: 1 }} className="text-4xl font-semibold tabular-nums text-clay">
                 ${Math.round(monthly).toLocaleString()}
               </motion.span>
             </div>

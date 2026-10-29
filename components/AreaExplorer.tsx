@@ -15,8 +15,8 @@ export default function AreaExplorer() {
   return (
     <section id="areas" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 sm:px-8 lg:py-32">
       <div className="mb-12 max-w-2xl">
-        <p className="text-xs uppercase tracking-[0.3em] text-amber">Neighbourhoods</p>
-        <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
+        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber">Neighbourhoods</p>
+        <h2 className="mt-3 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
           Every part of Accra has its own rhythm.
         </h2>
         <p className="mt-4 text-bone/60">Hover a neighbourhood to see what life there looks like.</p>
